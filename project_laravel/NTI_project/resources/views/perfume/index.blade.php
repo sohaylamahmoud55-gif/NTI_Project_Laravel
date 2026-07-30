@@ -13,18 +13,31 @@
 <!-- Products -->
 <section class="container py-5">
     <div class="row">
-        @foreach($perfumes as $perfume)
-        <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
-            <div class="product-card">
-                <img src="{{ asset($perfume->image) }}" alt="{{ $perfume->name }}" class="img-fluid">
-                <h5>{{ $perfume->name }}</h5>
-                <p>{{ $perfume->description }}</p>
-                <span class="price">EGP {{ $perfume->price }}</span>
-                <br>
-                <a href="#" class="btn btn-primary mt-3">View Details</a>
+        <div class="row g-4">
+            @foreach($perfumes as $perfume)
+            <div class="col-lg-3 col-md-6">
+                <div class="card product-card">
+                    <img src="{{ asset($perfume->image) }}" alt="{{ $perfume->name }}" class="img-fluid">
+                    <div class="card-body">
+                        <h5>{{ $perfume->name }}</h5>
+                        <p>{{ $perfume->description }}</p>
+                        <div class="stars">
+                            @for($i=0;$i<5;$i++)
+                                <i class="fa-solid fa-star"></i>
+                                @endfor
+                                ({{ $perfume->reviews }})
+                        </div>
+                        <h5 class="price">EGP {{ $perfume->price }}</h5>
+                        <button class="btn btn-success w-100">Add to Cart</button>
+                    </div>
+                </div>
             </div>
+            @endforeach
         </div>
-        @endforeach
+
+        <div class="mt-5 d-flex justify-content-center">
+            {{ $perfumes->links() }}
+        </div>
     </div>
 </section>
 

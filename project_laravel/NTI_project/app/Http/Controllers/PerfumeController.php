@@ -7,9 +7,15 @@ use Illuminate\Http\Request;
 
 class PerfumeController extends Controller
 {
-       public function index()
+    //    public function index()
+    // {
+    //     $perfumes = Product::where('category_id', 4)->get();
+
+    //     return view('perfume.index', compact('perfumes'));
+    // }
+    public function index()
     {
-        $perfumes = Product::where('category_id', 4)->get();
+        $perfumes = Product::where('category_id', 4)->paginate(8);
 
         return view('perfume.index', compact('perfumes'));
     }

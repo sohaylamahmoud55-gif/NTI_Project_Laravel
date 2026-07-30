@@ -26,16 +26,21 @@
                     <a class="nav-link" href="#">About Us</a>
                 </li>
             </ul>
+            <!-- search  -->
             <div class="search-box">
                 <form class="d-flex">
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                     <i class="fa-solid fa-magnifying-glass"></i>
                 </form>
             </div>
+
             <div class="icons">
                 <i class="fa-solid fa-user"></i>
-                <i class="fa-solid fa-cart-arrow-down"></i>
-            </div>
+                <!-- <i class="fa-solid fa-cart-arrow-down"></i> -->
+            <div>
+            <a href="{{ route('cart') }}">
+                <i class="fa-solid fa-cart-shopping"></i>
+            </a>
         </div>
     </div>
 </nav>
