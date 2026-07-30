@@ -19,14 +19,16 @@ class DatabaseSeeder extends Seeder
         $this->call([
 
             CategorySeeder::class,
-
             Skin_typeSeeder::class,
-
             Hair_typeSeeder::class,
-
             Body_sectionSeeder::class,
 
-            ProductSeeder::class,
+
+            SkinProductSeeder::class,
+            HairProductSeeder::class,
+            BodyProductSeeder::class,
+            PerfumeProductSeeder::class,
+
 
         ]);
 
