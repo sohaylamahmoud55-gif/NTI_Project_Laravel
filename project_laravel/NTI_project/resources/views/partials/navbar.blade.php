@@ -5,7 +5,7 @@
             Natural Glow
         </a>
 
-        <div class="collapse navbar-collapse" id="nav">
+        <div class="navbar-collapse d-flex align-items-center" id="nav">
             <ul class="navbar-nav mx-auto">
                 <li class="nav-item">
                     <a class="nav-link" href="{{ url('/home') }}">Home</a>
@@ -23,24 +23,44 @@
                     <a class="nav-link" href="{{ url('/home') }}#perfume">Perfume</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">About Us</a>
+                    <a class="nav-link" href="{{ route('about') }}">About Us</a>
                 </li>
             </ul>
             <!-- search  -->
-            <div class="search-box">
-                <form class="d-flex">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                </form>
+            <div class="d-flex align-items-center">
+                <div class="search-box">
+                    <form class="d-flex" action="{{ route('search') }}" method="GET">
+                        <input class="form-control me-2" type="search" name="search" placeholder="Search products..." value="{{ request('search') }}">
+                        <button type="submit" class="search-btn">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </button>
+                    </form>
+                </div>
             </div>
 
-            <div class="icons">
-                <i class="fa-solid fa-user"></i>
-                <!-- <i class="fa-solid fa-cart-arrow-down"></i> -->
-            <div>
-            <a href="{{ route('cart') }}">
-                <i class="fa-solid fa-cart-shopping"></i>
-            </a>
+            <div class="icons d-flex align-items-center">
+                @if(Auth::check())
+                <a href="{{ route('profile.edit') }}">
+                    <i class="fa-solid fa-user"></i>
+                </a>
+                @else
+                <a href="{{ route('login') }}" class="me-3">
+                    <i class="fa-solid fa-user"></i>
+                </a>
+                @endif
+                <a href="{{ route('cart') }}" class="cart-icon position-relative">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    @auth
+                    @php
+                    $count = \App\Models\CartItem::whereHas('cart', function($q){
+                    $q->where('user_id', auth()->id());
+                    })->sum('quantity');
+                    @endphp
+                    @if($count > 0)
+                    <span class="cart-count">{{ $count }}</span>
+                    @endif
+                    @endauth
+                </a>
+            </div>
         </div>
-    </div>
 </nav>

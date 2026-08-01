@@ -7,27 +7,16 @@ use Illuminate\Database\Eloquent\Model;
 class Product extends Model
 {
     protected $fillable = [
-
         'category_id',
-
         'skin_type_id',
-
         'hair_type_id',
-
         'body_section_id',
-
         'name',
-
         'description',
-
         'price',
-
         'stock',
-
         'image',
-
         'rating',
-
         'reviews',
 
     ];
@@ -63,7 +52,7 @@ class Product extends Model
 
     public function cartItems()
     {
-        return $this->hasMany(Cart_item::class);
+        return $this->hasMany(CartItem::class);
     }
 
     public function orderItems()

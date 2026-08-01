@@ -57,11 +57,21 @@ body {
 .navbar-nav .nav-link:hover {
     color: var(--primary-darker);
 }
-
+.icons {
+    display: flex;
+    align-items: center;
+}
 .icons i {
     font-size: 22px;
     margin-left: 18px;
     cursor: pointer;
+}
+.icons a {
+    color: var(--primary-darker);
+}
+.icons a:hover {
+    color: var(--primary-dark);
+    transition: var(--transition);
 }
 .search-box {
     position: relative;
@@ -87,7 +97,35 @@ body {
     color: var(--text-dark);
     cursor: pointer;
 }
+.search-btn {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+}
+.custom-alert {
+    position: fixed;
+    top: 90px;
+    right: 30px;
+    background: #3d5a40;
+    color: #fff;
+    padding: 15px 25px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    z-index: 9999;
+    animation: slideDown 0.4s ease;
+}
 
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 .header {
     padding: 70px 0;
     margin: 85px 0;
@@ -204,8 +242,34 @@ body {
     margin-bottom: 8px;
     font-size: small;
 }
+/* Checkout Page */
+.checkout-page {
+    background:var(--white);
+    min-height: 100vh;
+}
+
+.checkout-page .card {
+    border-radius: 20px;
+     background:var(--bg-section);
+}
+
+.checkout-page input,
+.checkout-page textarea,
+.checkout-page select {
+    border-radius: 12px;
+    padding: 12px;
+}
+
+.checkout-page h4 {
+    color: var(--primary-darker);
+}
+
+.checkout-page button {
+    border-radius: 12px;
+    padding: 12px;
+}
 .footer {
-    background: var(--bg-section);
+    background: var(--bg-color);
     padding: 60px 0 20px;
 }
 
@@ -304,7 +368,229 @@ body {
     color: var(--text-light);
     font-size: 14px;
 }
+/*================ Skin Result =================*/
 
+.result-card {
+    max-width: 700px;
+    margin: 40px auto;
+    background: #fff;
+    padding: 60px;
+    border-radius: 25px;
+    box-shadow: 6px 15px 35px rgba(0, 0, 0, 0.1);
+}
+.result-icon {
+    font-size: 80px;
+    color: var(--primary-darker);
+}
+.result-card h1 {
+    font-weight: bold;
+}
+.result-card h2 {
+    font-size: 40px;
+    color: var(--primary-darker);
+}
+.result-card p {
+    color: #666;
+    font-size: 18px;
+    line-height: 1.8;
+}
+/* Skin Test Video */
+.test-video {
+    width: 100%;
+    height: 600px;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+/* About Us Page */
+.hero-slider {
+    margin: 90px 0 40px 0;
+}
+.hero-slider img {
+    width: 100%;
+    height: 620px;
+    object-fit: cover;
+}
+.carousel-control-prev,
+.carousel-control-next {
+    width: 7%;
+}
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    width: 45px;
+    height: 45px;
+}
+.carousel-indicators button {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin: 0 6px;
+}
+/* ================= Why Us ================= */
+
+.why-us {
+    background: #f8f7f3;
+    width: 95%;
+    margin: 0 auto;
+}
+.feature-box {
+    /* padding: 10px 5px; */
+    transition: 0.3s;
+}
+.feature-box i {
+    font-size: 38px;
+    color: #3f5b49;
+    margin-bottom: 18px;
+}
+.feature-box h5 {
+    color: #2f4336;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+.feature-box p {
+    color: #777;
+    font-size: 15px;
+    line-height: 1.7;
+    margin: 0;
+}
+.feature-box:hover {
+    transform: translateY(-6px);
+}
+.our-story {
+    padding: 90px 0;
+}
+.our-story h2 {
+    font-size: 48px;
+    color: #2f4f3e;
+    font-weight: bold;
+}
+.our-story p {
+    font-size: 18px;
+    line-height: 1.9;
+    color: #666;
+}
+.story-image {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+}
+.story-image img {
+    width: 100%;
+    display: block;
+    border-radius: 20px;
+}
+.story-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50px;
+    transform: translateY(-50%);
+    max-width: 320px;
+    color: #2d2d2d;
+}
+.story-overlay h2 {
+    font-size: 30px;
+    /* font-weight: 700; */
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+.story-overlay p {
+    font-size: 18px;
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+.story-overlay .btn {
+    padding: 12px 30px;
+    border-radius: 8px;
+    background: #3d5747;
+    border: none;
+}
+.story-overlay .btn:hover {
+    background: #2f4336;
+}
+.carousel-indicators [data-bs-target] {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #062104;
+    opacity: 0.5;
+}
+.carousel-indicators .active {
+    opacity: 1;
+    background-color: #344c3d;
+}
+
+/* ================= Reviews ================= */
+
+.reviews {
+    background: #fafaf8;
+    width: 95%;
+    margin: 0 auto;
+}
+.reviews h2 {
+    font-size: 42px;
+    font-weight: 700;
+}
+.review-card {
+    background: #fff;
+    padding: 30px;
+    border-radius: 18px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    transition: 0.3s;
+}
+.review-card:hover {
+    transform: translateY(-8px);
+}
+.review-card p {
+    margin: 20px 0;
+    line-height: 1.8;
+    color: #666;
+}
+.review-user {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.review-user img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.review-user h6 {
+    margin: 0;
+    font-weight: bold;
+}
+.review-user span {
+    color: #999;
+    font-size: 14px;
+}
+
+/* ================= CTA ================= */
+
+.cta-section {
+    padding: 80px 0;
+}
+.cta-box {
+    background: linear-gradient(135deg, #edf5ec, #dfeadf);
+    padding: 70px;
+    border-radius: 30px;
+}
+.cta-box h2 {
+    font-size: 48px;
+    font-weight: 700;
+    color: #2d352f;
+}
+.cta-box p {
+    width: 70%;
+    margin: 25px auto;
+    color: #666;
+    line-height: 1.8;
+}
+.cta-box .btn {
+    padding: 14px 35px;
+    font-size: 18px;
+    border-radius: 40px;
+}
 /* Responsive */
 
 @media (max-width: 768px) {

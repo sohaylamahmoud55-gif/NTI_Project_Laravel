@@ -50,9 +50,9 @@
                     <div class="d-flex justify-content-between align-items-center mb-4">
                         <h2>{{ $category->name }}</h2>
                         @if($category->id == 1)
-                        <a href="{{ url('/skin') }}" class="btn btn-outline-dark">View All</a>
+                        <a href="{{ route('skin.care') }}" class="btn btn-outline-dark">View All</a>
                         @elseif($category->id == 2)
-                        <a href="{{ url('/hair') }}" class="btn btn-outline-dark">View All</a>
+                        <a href="{{ route('hair.care')}}" class="btn btn-outline-dark">View All</a>
                         @elseif($category->id == 3)
                         <a href="{{ url('/body') }}" class="btn btn-outline-dark">View All</a>
                         @elseif($category->id == 4)
@@ -73,11 +73,13 @@
                                         @for ($i = 1; $i <= 5; $i++)
                                             <i class="fa-solid fa-star"></i>
                                             @endfor
-
                                             ({{ $product->reviews }})
                                     </div>
                                     <h5 class="price">EGP {{ $product->price }}</h5>
-                                    <button class="btn btn-success w-100"> Add to Cart</button>
+                                    <form action="{{ route('cart.add',$product->id) }}" method="POST">
+                                        @csrf
+                                        <button class="btn btn-success w-100">Add To Cart </button>
+                                    </form>
                                 </div>
                             </div>
                         </div>
@@ -85,4 +87,8 @@
                     </div>
                 </div>
             </section>
-            @endforeach
+        </section>
+    </section>
+</section>
+@endforeach
+@endsection

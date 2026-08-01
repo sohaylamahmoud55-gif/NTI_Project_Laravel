@@ -16,14 +16,11 @@ class Hair_typeSeeder extends Seeder
         Hair_type::insert([
 
             ['name' => 'Curly Hair'],
-
             ['name' => 'Straight Hair'],
-
             ['name' => 'Wavy Hair'],
-
             ['name' => 'Dry Hair'],
-
             ['name' => 'Oily Hair'],
+            ['name' => 'Normal Hair'],
 
         ]);
     }

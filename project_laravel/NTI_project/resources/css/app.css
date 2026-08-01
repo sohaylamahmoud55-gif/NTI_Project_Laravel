@@ -1,4 +1,11 @@
 @import 'tailwindcss';
+@import '../../public/css/style.css';
+@import '../../public/css/body.css';
+@import '../../public/css/login.css';
+@import '../../public/css/perfume.css';
+@import '../../public/css/skincare.css';
+@import '../../public/css/cart.css';
+
 
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
 @source '../../storage/framework/views/*.php';

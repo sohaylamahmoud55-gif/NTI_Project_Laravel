@@ -6,7 +6,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class Hair_type extends Model
 {
-    protected $fillable = ['name'];
+    protected $table = 'hair_types';
+
+    protected $fillable = [
+        'name',
+        'image',
+        'description'
+    ];
 
     public function products()
     {
