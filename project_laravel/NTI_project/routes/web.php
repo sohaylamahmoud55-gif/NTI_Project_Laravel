@@ -73,6 +73,7 @@ Route::middleware('auth')->group(function () {
     // checkout
     Route::get('/checkout', [CheckoutController::class, 'index'])->name('checkout');
 });
+Route::post('/checkout', [CheckoutController::class, 'placeOrder'])->name('checkout.place');
 
 
 // ====================== Auth ======================

@@ -16,7 +16,8 @@
             <div class="col-lg-7">
                 <div class="card shadow-sm p-4 border-0">
                     <h4 class="mb-4">Billing Details</h4>
-                    <form>
+                    <form action="{{ route('checkout.place') }}" method="POST">
+                        @csrf
                         <div class="mb-3">
                             <label class="form-label">Full Name</label>
                             <input type="text" class="form-control" value="{{ auth()->user()->name }}" readonly>
@@ -27,26 +28,57 @@
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Phone Number</label>
-                            <input type="text" class="form-control" placeholder="Enter phone number">
+                            <input type="text" name="phone" value="{{ old('phone') }}" class="form-control" placeholder="Enter phone number">
+                            @error('phone')
+                            <small class="text-danger">{{ $message }}</small>
+                            @enderror
                         </div>
                         <div class="mb-3">
                             <label class="form-label">City</label>
-                            <input type="text" class="form-control">
+                            <input type="text" name="city" value="{{ old('city') }}" class="form-control" placeholder="Enter city">
+                            @error('city')
+                            <small class="text-danger">{{ $message }}</small>
+                            @enderror
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Address</label>
                             <textarea
+                                name="address"
                                 class="form-control"
                                 rows="4">
+                            {{ old('address') }}
                             </textarea>
+                            @error('address')
+                            <small class="text-danger">{{ $message }}</small>
+                            @enderror
                         </div>
                         <div class="mb-4">
+                            <label class="form-label">Payment Method</label>
+                            <select name="payment_method" class="form-select">
+                                <option value="">Choose Payment Method</option>
+
+                                <option value="Cash On Delivery"
+                                    {{ old('payment_method') == 'Cash On Delivery' ? 'selected' : '' }}>
+                                    Cash On Delivery
+                                </option>
+
+                                <option value="Visa"
+                                    {{ old('payment_method') == 'Visa' ? 'selected' : '' }}>
+                                    Visa
+                                </option>
+                            </select>
+                            @error('payment_method')
+                            <small class="text-danger">{{ $message }}</small>
+                            @enderror
+                        </div>
+                        <!-- <div class="mb-4">
                             <label class="form-label">Payment Method</label>
                             <select class="form-select">
                                 <option>Cash On Delivery</option>
                                 <option>Visa</option>
                             </select>
-                        </div>
+                        </div> -->
+                        <button class="btn btn-success w-100 mt-4">Place Order</button>
                     </form>
                 </div>
             </div>
@@ -75,7 +107,7 @@
                         <h5>Total</h5>
                         <h5>EGP {{ $total }}</h5>
                     </div>
-                    <button class="btn btn-success w-100 mt-4">Place Order</button>
+                    <!-- <button class="btn btn-success w-100 mt-4">Place Order</button> -->
                 </div>
             </div>
         </div>

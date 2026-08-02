@@ -1,10 +1,18 @@
 @extends('layouts.app')
 @section('content')
 
-<section class="page-header">
+<!-- <section class="page-header">
     <div class="container text-center">
         <h1>Skin Type Products</h1>
     </div>
+</section> -->
+<section class="page-header">
+    <h1 class="text-center mb-5">
+        Skin Care >
+        <span class="skin-type-name">
+            {{ $skinType->name }}
+        </span>
+    </h1>
 </section>
 <div class="container py-5 mt-5">
     <div class="row g-4">

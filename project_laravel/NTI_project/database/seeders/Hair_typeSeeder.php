@@ -15,12 +15,40 @@ class Hair_typeSeeder extends Seeder
     {
         Hair_type::insert([
 
-            ['name' => 'Curly Hair'],
-            ['name' => 'Straight Hair'],
-            ['name' => 'Wavy Hair'],
-            ['name' => 'Dry Hair'],
-            ['name' => 'Oily Hair'],
-            ['name' => 'Normal Hair'],
+            [
+                'name' => 'Curly Hair',
+                'image' => 'curly.jpg',
+                'description' => 'Curly Hair'
+            ],
+
+            [
+                'name' => 'Straight Hair',
+                'image' => 'straight.jpg',
+                'description' => 'Straight Hair'
+            ],
+
+            [
+                'name' => 'Wavy Hair',
+                'image' => 'wavy.jpg',
+                'description' => 'Wavy Hair'
+            ],
+
+            [
+                'name' => 'Dry Hair',
+                'image' => 'dry.jpg',
+                'description' => 'Dry Hair'
+            ],
+
+            [
+                'name' => 'Oily Hair',
+                'image' => 'oily.jpg',
+                'description' => 'Oily Hair'
+            ],
+            [
+                'name' => 'Normal Hair',
+                'image' => 'normal.jpg',
+                'description' => 'Normal Hair'
+            ],
 
         ]);
     }

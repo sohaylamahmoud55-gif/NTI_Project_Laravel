@@ -2,9 +2,12 @@
 @section('content')
 
 <section class="page-header">
-    <div class="container text-center">
-        <h1> {{ $hairType->name }}</h1>
-    </div>
+    <h1 class="text-center mb-5">
+        Hair Care >
+        <span class="skin-type-name">
+            {{ $hairType->name }}
+        </span>
+    </h1>
 </section>
 <div class="container py-5 mt-5">
     <div class="row g-4">

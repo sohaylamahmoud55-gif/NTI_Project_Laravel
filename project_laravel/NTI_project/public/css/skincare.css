@@ -1,3 +1,7 @@
+.skin-type-name {
+    color: #4f6f52;
+    font-size: 34px;
+}
 .skincare {
     padding-top: 50px;
 }
@@ -27,7 +31,6 @@
     object-fit: cover;
 }
 
-
 .overlay {
     position: absolute;
     inset: 0;
@@ -38,7 +41,7 @@
     color: white;
     font-size: 28px;
     font-weight: 600;
-    transition: .3s;
+    transition: 0.3s;
 }
 .skin-link:hover .overlay {
     color: var(--primary-darker);
